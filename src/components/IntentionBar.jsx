@@ -2,10 +2,17 @@ import { useStudio } from '../store.js';
 
 const INTENTIONS = [
   { key: 'sejour_convivial', label: 'Séjour convivial', desc: 'Canapés + table basse + TV' },
+  { key: 'sejour_soiree', label: 'Séjour soirée', desc: 'Disposition conversation' },
   { key: 'cuisine_fonctionnelle', label: 'Cuisine ouverte', desc: 'Plan de travail + table 4 places' },
+  { key: 'cuisine_ilot', label: 'Cuisine îlot', desc: 'Repas rapide côté cuisine' },
   { key: 'chambre_parentale', label: 'Chambre parentale', desc: 'Lit double + armoire + bureau' },
+  { key: 'chambre_zen', label: 'Chambre zen', desc: 'Minimaliste + plantes' },
   { key: 'chambres_enfants', label: 'Chambres enfants', desc: '2 lits + bureaux' },
-  { key: 'mezzanine_lecture', label: 'Mezzanine lecture', desc: 'Fauteuil cosy + plante' },
+  { key: 'chambres_ados', label: 'Chambres ados', desc: 'Lits + fauteuil détente' },
+  { key: 'mezzanine_lecture', label: 'Mezzanine lecture', desc: 'Fauteuils cosy' },
+  { key: 'mezzanine_bureau', label: 'Mezzanine bureau', desc: 'Espace télétravail' },
+  { key: 'open_space_complet', label: 'Open-space complet', desc: 'Tout le RDC aménagé' },
+  { key: 'minimaliste', label: 'Minimaliste', desc: 'Essentiel seulement' },
 ];
 
 export default function IntentionBar() {
@@ -34,7 +41,7 @@ export default function IntentionBar() {
             borderRadius: 10,
             padding: '10px 14px',
             textAlign: 'left',
-            minWidth: 160,
+            minWidth: 155,
           }}
         >
           <div style={{ fontWeight: 600, fontSize: 13 }}>{it.label}</div>

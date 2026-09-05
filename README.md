@@ -3,16 +3,15 @@
 Visualiseur + studio d’aménagement interactif des plans **TY GWENN**  
 **20 Impasse du Dranken, 56700 Hennebont** · M. TUDURI & Mme LE SOLLIEC
 
-## Fonctionnalités v2
+## Fonctionnalités v2.1
 
-- **Modèle 3D** de la maison (RDC + étage) basé sur les plans signés
-- **Barre d’intention** : propositions d’agencement optimisé (séjour, cuisine, chambres…)
-- **Catalogue mobilier** complet (salon, cuisine, chambre, bain, déco)
-- Placement / déplacement / rotation (touche **R**) / suppression
-- **Mode Visite** (walkthrough première personne)
-- Tableau de surfaces interactif
-- Undo (Ctrl/Cmd + Z)
-- Matériaux procéduraux légers (chargement optimisé, pas de textures lourdes)
+- **Modèle 3D** calé sur les cotes des plans (RDC + étage)
+- **12 intentions** d’agencement optimisé (séjour, cuisine, chambres, mezzanine, open-space, minimaliste…)
+- **Catalogue mobilier** complet
+- Placement / déplacement / rotation (**R**) / suppression / Undo
+- **Mode Visite** (walkthrough)
+- Matériaux procéduraux (chargement optimisé)
+- Structure `.grok` + `AGENTS.project.md` prête pour sandbox Grok natif
 
 ## Surfaces
 
@@ -29,12 +28,12 @@ npm install
 npm run dev
 ```
 
-## Déploiement GitHub Pages
+## Déploiement
 
-Settings → Pages → Source = **GitHub Actions**  
-URL : https://neltud.github.io/maison-ty-gwenn-visualizer/
+GitHub Pages : Settings → Pages → Source = GitHub Actions  
+https://neltud.github.io/maison-ty-gwenn-visualizer/
 
 ## Source
 
 Plans signés SAS Constructions TY GWENN – 26/06/2026 / 15/07/2026  
-Studio adapté depuis le projet [blend-glade-wolf-grove](https://github.com/Neltud/blend-glade-wolf-grove)
+Studio inspiré de [blend-glade-wolf-grove](https://github.com/Neltud/blend-glade-wolf-grove)
