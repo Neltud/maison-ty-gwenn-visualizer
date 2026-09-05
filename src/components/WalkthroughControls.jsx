@@ -4,7 +4,7 @@ import { PointerLockControls } from '@react-three/drei';
 import * as THREE from 'three';
 
 export default function WalkthroughControls({ enabled }) {
-  const { camera, gl } = useThree();
+  const { camera } = useThree();
   const controls = useRef();
   const velocity = useRef(new THREE.Vector3());
   const direction = useRef(new THREE.Vector3());
@@ -12,56 +12,45 @@ export default function WalkthroughControls({ enabled }) {
 
   useEffect(() => {
     if (!enabled) return;
-
-    const onKeyDown = (e) => {
-      switch (e.code) {
-        case 'KeyW': case 'ArrowUp': keys.current.forward = true; break;
-        case 'KeyS': case 'ArrowDown': keys.current.backward = true; break;
-        case 'KeyA': case 'ArrowLeft': keys.current.left = true; break;
-        case 'KeyD': case 'ArrowRight': keys.current.right = true; break;
-        case 'ShiftLeft': case 'ShiftRight': keys.current.sprint = true; break;
-      }
+    const down = (e) => {
+      if (e.code === 'KeyW' || e.code === 'ArrowUp') keys.current.forward = true;
+      if (e.code === 'KeyS' || e.code === 'ArrowDown') keys.current.backward = true;
+      if (e.code === 'KeyA' || e.code === 'ArrowLeft') keys.current.left = true;
+      if (e.code === 'KeyD' || e.code === 'ArrowRight') keys.current.right = true;
+      if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') keys.current.sprint = true;
     };
-    const onKeyUp = (e) => {
-      switch (e.code) {
-        case 'KeyW': case 'ArrowUp': keys.current.forward = false; break;
-        case 'KeyS': case 'ArrowDown': keys.current.backward = false; break;
-        case 'KeyA': case 'ArrowLeft': keys.current.left = false; break;
-        case 'KeyD': case 'ArrowRight': keys.current.right = false; break;
-        case 'ShiftLeft': case 'ShiftRight': keys.current.sprint = false; break;
-      }
+    const up = (e) => {
+      if (e.code === 'KeyW' || e.code === 'ArrowUp') keys.current.forward = false;
+      if (e.code === 'KeyS' || e.code === 'ArrowDown') keys.current.backward = false;
+      if (e.code === 'KeyA' || e.code === 'ArrowLeft') keys.current.left = false;
+      if (e.code === 'KeyD' || e.code === 'ArrowRight') keys.current.right = false;
+      if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') keys.current.sprint = false;
     };
-
-    document.addEventListener('keydown', onKeyDown);
-    document.addEventListener('keyup', onKeyUp);
+    document.addEventListener('keydown', down);
+    document.addEventListener('keyup', up);
     return () => {
-      document.removeEventListener('keydown', onKeyDown);
-      document.removeEventListener('keyup', onKeyUp);
+      document.removeEventListener('keydown', down);
+      document.removeEventListener('keyup', up);
     };
   }, [enabled]);
 
   useFrame((_, delta) => {
     if (!enabled || !controls.current?.isLocked) return;
-
-    const speed = keys.current.sprint ? 8 : 3.5;
-    velocity.current.x -= velocity.current.x * 10.0 * delta;
-    velocity.current.z -= velocity.current.z * 10.0 * delta;
-
+    const speed = keys.current.sprint ? 7 : 3.2;
+    velocity.current.x -= velocity.current.x * 8 * delta;
+    velocity.current.z -= velocity.current.z * 8 * delta;
     direction.current.z = Number(keys.current.forward) - Number(keys.current.backward);
     direction.current.x = Number(keys.current.right) - Number(keys.current.left);
     direction.current.normalize();
-
-    if (keys.current.forward || keys.current.backward) velocity.current.z -= direction.current.z * speed * delta;
-    if (keys.current.left || keys.current.right) velocity.current.x -= direction.current.x * speed * delta;
-
-    controls.current.moveRight(-velocity.current.x * delta * 60);
-    controls.current.moveForward(-velocity.current.z * delta * 60);
-
-    // Keep camera at eye height
+    if (keys.current.forward || keys.current.backward)
+      velocity.current.z -= direction.current.z * speed * delta;
+    if (keys.current.left || keys.current.right)
+      velocity.current.x -= direction.current.x * speed * delta;
+    controls.current.moveRight(-velocity.current.x * delta * 55);
+    controls.current.moveForward(-velocity.current.z * delta * 55);
     camera.position.y = 1.65;
   });
 
   if (!enabled) return null;
-
   return <PointerLockControls ref={controls} />;
 }

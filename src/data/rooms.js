@@ -13,7 +13,7 @@ export const surfaces = {
       { id: 'wc1', name: 'WC 1', amenagee: 1.66, habitable: 1.66, color: '#64748b' },
       { id: 'cellier', name: 'Cellier', amenagee: 0, habitable: 0, garage: 4.74, color: '#78716c' },
       { id: 'garage', name: 'Garage', amenagee: 0, habitable: 0, garage: 23.54, color: '#57534e' },
-    ]
+    ],
   },
   etage: {
     title: 'Étage',
@@ -25,21 +25,19 @@ export const surfaces = {
       { id: 'mezzanine', name: 'Mezzanine', amenagee: 6.54, habitable: 6.54, color: '#a855f7' },
       { id: 'bains2', name: 'Salle de bains 2', amenagee: 3.81, habitable: 3.81, color: '#06b6d4' },
       { id: 'wc2', name: 'WC 2', amenagee: 1.51, habitable: 1.51, color: '#64748b' },
-    ]
+    ],
   },
   projet: {
     totalAmenagee: 107.09,
     totalHabitable: 104.82,
-    totalGarage: 28.28
-  }
+    totalGarage: 28.28,
+  },
 };
 
-// Dimensions approximatives en mètres (basées sur les plans)
-export const dimensions = {
-  longueur: 14.9,
-  largeur: 10.5,
-  hauteurRdc: 2.7,
-  hauteurEtage: 2.5,
-  garageLongueur: 6.0,
-  garageLargeur: 4.0,
+// Dimensions en mètres (approximées des plans 1/75)
+export const HOUSE = {
+  length: 14.9,
+  width: 10.2,
+  heightRdc: 2.7,
+  heightEtage: 2.5,
 };
