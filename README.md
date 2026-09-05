@@ -1,14 +1,17 @@
 # Maison TY GWENN – Visualiseur 3D interactif
 
-Application web de visualisation 2D/3D des plans de la maison construite par **SAS Constructions TY GWENN** pour **M. TUDURI et Mme LE SOLLIEC** (20 Impasse du Dranken, 56700 Hennebont).
+Application web de visualisation 2D/3D des plans de la maison construite par **SAS Constructions TY GWENN** pour **M. TUDURI et Mme LE SOLLIEC**.
+
+**Adresse** : 20 Impasse du Dranken, 56700 Hennebont
 
 ## Fonctionnalités
 
 - **Modèle 3D interactif** des volumes (RDC + étage)
-- Sélection des pièces (clic dans la scène 3D ou dans le tableau)
-- Tableau de surfaces complet (habitable / aménagée / garage)
+- **Mode Visite (Walkthrough)** : déplacement en première personne (WASD + souris)
+- Sélection des pièces (clic 3D ou tableau)
+- Tableau de surfaces complet
+- Galerie des plans originaux (pages du PDF signé)
 - Affichage / masquage de l’étage
-- Navigation libre (orbit, zoom, pan)
 
 ## Surfaces du projet
 
@@ -25,28 +28,29 @@ npm install
 npm run dev
 ```
 
-Ouvrir http://localhost:5173
+## Déploiement GitHub Pages
 
-## Build & déploiement GitHub Pages
+Le workflow Actions est déjà configuré.  
+Dans **Settings → Pages**, choisissez **Source = GitHub Actions**.
 
-```bash
-npm run build
-# ou
-npm run deploy   # nécessite gh-pages
-```
+URL attendue : https://neltud.github.io/maison-ty-gwenn-visualizer/
 
-Configurer ensuite GitHub Pages sur la branche `gh-pages` (ou `main` / dossier `/docs` selon votre choix).
+## Ajouter les images des plans
+
+1. Extraire les pages du PDF en JPG (ou utiliser les fichiers déjà générés)
+2. Placer `page-1.jpg` … `page-8.jpg` dans `public/plans/`
+3. Mettre à jour `PlansGallery.jsx` pour pointer vers `/maison-ty-gwenn-visualizer/plans/page-X.jpg`
 
 ## Stack
 
-- React 18
-- Vite
+- React 18 + Vite
 - Three.js + React Three Fiber + Drei
+- PointerLockControls pour le walkthrough
 
-## Source des plans
+## Source
 
-Plans signés TY GWENN – Perspectives & tableaux de surfaces (document fourni le 26/06/2026).
+Plans signés TY GWENN – 26/06/2026 (perspectives) / 15/07/2026 (signatures)
 
 ---
 
-© Visualiseur créé pour exploration des plans – non contractuel.
+Non contractuel – outil d’exploration des plans.
