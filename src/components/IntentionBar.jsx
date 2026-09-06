@@ -1,6 +1,7 @@
 import { useStudio } from '../store.js';
 
 const INTENTIONS = [
+  { key: 'plan_architecte', label: 'Plan architecte', desc: 'Disposition dessinée sur les plans' },
   { key: 'sejour_convivial', label: 'Séjour convivial', desc: 'Canapés + table basse + TV' },
   { key: 'sejour_soiree', label: 'Séjour soirée', desc: 'Disposition conversation' },
   { key: 'cuisine_fonctionnelle', label: 'Cuisine ouverte', desc: 'Plan de travail + table 4 places' },
