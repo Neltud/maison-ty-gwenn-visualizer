@@ -3,15 +3,15 @@
 Visualiseur + studio d’aménagement interactif des plans **TY GWENN**  
 **20 Impasse du Dranken, 56700 Hennebont** · M. TUDURI & Mme LE SOLLIEC
 
-## Fonctionnalités v2.1
+## Fonctionnalités
 
-- **Modèle 3D** calé sur les cotes des plans (RDC + étage)
-- **12 intentions** d’agencement optimisé (séjour, cuisine, chambres, mezzanine, open-space, minimaliste…)
-- **Catalogue mobilier** complet
-- Placement / déplacement / rotation (**R**) / suppression / Undo
-- **Mode Visite** (walkthrough)
+- Modèle 3D (RDC + étage) calé sur les plans signés
+- **12 intentions** d’agencement optimisé
+- Catalogue mobilier complet
+- Placement / rotation (**R**) / suppression / Undo
+- Mode Visite (walkthrough)
 - Matériaux procéduraux (chargement optimisé)
-- Structure `.grok` + `AGENTS.project.md` prête pour sandbox Grok natif
+- Prêt pour import dans un **sandbox Grok natif**
 
 ## Surfaces
 
@@ -21,19 +21,28 @@ Visualiseur + studio d’aménagement interactif des plans **TY GWENN**
 | Étage  | 30,71 m²  | — |
 | **Total** | **104,82 m²** | **28,28 m²** |
 
-## Lancer
+## Lancer (GitHub Pages / local)
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Déploiement
+## Sandbox Grok natif
 
-GitHub Pages : Settings → Pages → Source = GitHub Actions  
+Voir `AGENTS.md` et `AGENTS.project.md`.
+
+Pour un vrai sandbox Grok (TanStack Start + preview live + Vercel) :
+1. Ouvrir **Grok Build**
+2. Créer un nouveau projet
+3. Demander d’importer ce dépôt / ce studio TY GWENN
+
+## Déploiement GitHub Pages
+
+Settings → Pages → Source = **GitHub Actions**  
 https://neltud.github.io/maison-ty-gwenn-visualizer/
 
 ## Source
 
 Plans signés SAS Constructions TY GWENN – 26/06/2026 / 15/07/2026  
-Studio inspiré de [blend-glade-wolf-grove](https://github.com/Neltud/blend-glade-wolf-grove)
+Inspiré de [blend-glade-wolf-grove](https://github.com/Neltud/blend-glade-wolf-grove) (export Grok `34dde4c`)

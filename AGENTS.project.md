@@ -1,24 +1,25 @@
-# Maison TY GWENN – Studio d’aménagement
+# Instructions projet – Maison TY GWENN
 
-Projet de visualisation et d’aménagement 3D des plans signés TY GWENN Constructions
-pour M. TUDURI et Mme LE SOLLIEC (20 Impasse du Dranken, 56700 Hennebont).
+## Objectif
 
-## Objectif produit
+Studio d’aménagement 3D interactif des plans d’architecte TY GWENN.
 
-- Visualiser le volume réel de la maison (RDC + étage) à partir des plans d’architecte.
-- Proposer des agencements optimisés via la barre d’intention.
-- Permettre le placement / déplacement / rotation de mobilier.
-- Mode visite (walkthrough) en première personne.
-- Surfaces exactes : 104,82 m² habitables + 28,28 m² garage.
+## Données clés (ne pas inventer)
 
-## Contraintes techniques actuelles
+- Surfaces RDC : 74,11 m² habitables / 28,28 m² garage
+- Surfaces étage : 30,71 m²
+- Total projet : 104,82 m² habitables
+- Constructeur : SAS Constructions TY GWENN, 166 rue de Belgique, 56100 Lorient
+- Adresse chantier : 20 Impasse du Dranken, 56700 Hennebont
 
-- Stack simple Vite + React + React Three Fiber + Zustand (compatible GitHub Pages).
-- Matériaux 100 % procéduraux (pas de textures lourdes).
-- Coordonnées mobilier calées sur les cotes des plans 1/75.
+## Intentions d’agencement à conserver
 
-## Prochaines évolutions souhaitées
+sejour_convivial, sejour_soiree, cuisine_fonctionnelle, cuisine_ilot,
+chambre_parentale, chambre_zen, chambres_enfants, chambres_ados,
+mezzanine_lecture, mezzanine_bureau, open_space_complet, minimaliste
 
-- Structure TanStack Start complète si bascule sandbox Grok natif.
-- Import des images des pages du PDF dans une galerie.
-- Export plan aménagé (JSON / image).
+## Règles de design
+
+- Matériaux procéduraux uniquement (performance).
+- Coordonnées mobilier en mètres, origine ≈ centre du séjour.
+- Mode Visite à hauteur des yeux (1,65 m).
